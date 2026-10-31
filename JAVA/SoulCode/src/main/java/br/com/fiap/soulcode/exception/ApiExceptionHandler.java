@@ -74,7 +74,10 @@ public class ApiExceptionHandler {
         logger.error("Erro durante uma operação da API.", e);
 
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body(Map.of("erro", "Não foi possível concluir a operação."));
+                .body(Map.of(
+                        "erro", "Não foi possível concluir a operação.",
+                        "detalhe", e.getClass().getSimpleName()
+                ));
     }
 
     @ExceptionHandler(Exception.class)
@@ -89,3 +92,4 @@ public class ApiExceptionHandler {
                 ));
     }
 }
+
