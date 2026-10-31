@@ -83,6 +83,9 @@ public class ApiExceptionHandler {
         logger.error("Erro inesperado na API.", e);
 
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body(Map.of("erro", "Ocorreu um erro interno no servidor."));
+                .body(Map.of(
+                        "erro", "Ocorreu um erro interno no servidor.",
+                        "detalhe", e.getClass().getSimpleName()
+                ));
     }
 }
