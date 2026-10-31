@@ -1,0 +1,21 @@
+# Maven / Java
+target/
+*.class
+*.log
+
+# IntelliJ / IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.classpath
+.project
+.settings/
+
+# Local / SO
+.env
+.env.*
+db.local.properties
+.DS_Store
+Thumbs.db
