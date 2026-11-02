@@ -1,5 +1,7 @@
 package br.com.fiap.soulcode.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.security.MessageDigest;
 
 public class Usuario {
@@ -123,6 +125,7 @@ public class Usuario {
         this.nome = nome;
     }
 
+    @JsonIgnore // a senha (mesmo em hash) nunca sai nas respostas da API
     public String getSenhaHash() {
         return senhaHash;
     }
